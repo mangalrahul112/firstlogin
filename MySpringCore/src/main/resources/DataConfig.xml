@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	 <!-- <bean id="data" class="com.caps.dev.spring.core.xml.Data"
+			p:sub="Java">
+		
+		<property name="info">
+			<list>
+				<value>One</value>
+				<value>Two</value>
+				<value>Three</value>
+			</list>
+		</property>
+		
+			<property name="jobs">
+				<list>
+					<ref bean="dev"/>
+					<ref bean="test"/>
+				</list>
+			</property>
+	</bean>  -->
+	<bean id="data" class="com.caps.dev.spring.core.xml.Data">
+	<constructor-arg name="sub" value="java"></constructor-arg>
+			<constructor-arg name="info">
+			<list> 
+				<value>One</value>
+				<value>Two</value>
+				<value>Three</value>
+			</list>
+			</constructor-arg>
+			<constructor-arg name="jobs">
+			<list>
+					<ref bean="dev"/>
+					<ref bean="test"/>
+				</list>
+			</constructor-arg>
+			</bean>
+
+ <bean id="dev" class="com.caps.dev.spring.core.xml.SoftwareDeveloper"></bean>
+ <bean id="test" class="com.caps.dev.spring.core.xml.SoftwareTester"></bean>
+</beans>
